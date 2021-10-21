@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/popup.css">
+
+    </head>
+    <body style = "background: linear-gradient(#141e30, #53d9d1);">
+
+      <div class = "main-content"> {{>header}} </div>
+
+
+        <div class="form-box">
+            <h2>Insert your text</h2>
+            <form>
+
+                <div class="circle-animation" >
+                    <svg>
+                        <circle class="circle-one" stroke-linecap="round" cx="50%" cy="50%" r="70"></circle>
+                        <circle class="circle-two" stroke-linecap="round" cx="50%" cy="50%" r="55"></circle>	
+                    </svg>	 	
+                </div>
+  
+                <div class="text-box">
+                    <input placeholder="Insert Your Text" type="text">
+                    <button id="form_btm">Check it !</button>
+                </div>
+          
+            </form>
+        </div>
+
+               <div class="popup" onclick="myFunction()">
+        <span class="popuptext" id="myPopup">
+            <h3 id="userTextReq"></h3>
+            <p id="toxicRes"></p>
+        </span>
+        </div>
+
+        {{>footer}}
+    </body>
+    <script src="/js/app.js"></script>
+    <script src="/js/popup.js"></script>
+
+    
+</html>
+
+
+
+
+
+
+
