@@ -23,7 +23,7 @@ toxicForm.addEventListener('submit',(e)=>{
 
 
     //fetch post request to express server
-    fetch("http://localhost:3000/toxic_predict",{
+    fetch("https://app-toxic-erez.herokuapp.com/toxic_predict",{
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: text
