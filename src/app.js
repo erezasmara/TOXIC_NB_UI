@@ -27,28 +27,7 @@ app.use(express.static(publicDirPath))
 
 
 //Routes
-app.post('/toxic_predict',(req,res) =>{
-
-    if(!req.body || req.body.data.length <= 0){
-        return res.status(404).send({
-            error : "you must provide text."
-        })
-    }else if(req.body.data.length > 50){
-        return res.status(404).send({
-            error : "max 50 Characters"
-        })
-    }
-    // send the request to machine learning server
-    toxic.GetToxicPredict(req.body).then((resolve) =>{
-        console.log(resolve);
-        res.status(201).send(resolve)
-    }).catch((reject) =>{
-        res.status(404).send(reject)
-    })
-
-})
-
-app.get('',(req,res) =>{
+app.get('/',(req,res) =>{
     res.render('index',{
         title:"title",
         description:"description",
@@ -86,6 +65,28 @@ app.get('/help',(req,res) =>{
 })
 
 
+app.post('/toxic_predict',(req,res) =>{
+
+    if(!req.body || req.body.data.length <= 0){
+        return res.status(404).send({
+            error : "you must provide text."
+        })
+    }else if(req.body.data.length > 50){
+        return res.status(404).send({
+            error : "max 50 Characters"
+        })
+    }
+    // send the request to machine learning server
+    toxic.GetToxicPredict(req.body).then((resolve) =>{
+        console.log(resolve);
+        res.status(201).send(resolve)
+    }).catch((reject) =>{
+        res.status(404).send(reject)
+    })
+
+})
+
+
 app.get('/*',(req,res) =>{
     res.render('404',{
         title:"404",
@@ -99,5 +100,5 @@ app.get('/*',(req,res) =>{
 
 
 app.listen(3000, () =>{
-    console.log(`Server is up on port: ${port}`)
+    console.log('Server is up on port: ' + port)
 })
