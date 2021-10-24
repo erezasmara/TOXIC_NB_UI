@@ -13,7 +13,7 @@
 
 
         <div class="form-box">
-            <h2>Insert your text</h2>
+            <h2 id="titleForm" >INSERT YOURS COMMENT</h2>
             <form>
 
                 <div class="circle-animation" >
@@ -31,17 +31,21 @@
             </form>
         </div>
 
-               <div class="popup" onclick="myFunction()">
-        <span class="popuptext" id="myPopup">
-            <h3 id="userTextReq"></h3>
-            <p id="toxicRes"></p>
-        </span>
+        <div class="popup" onclick="GuruPop()">
+            <span class="popuptext" id="myPopup">
+                <img id="statusImg" src="" style="width: 40px; border-radius: 50% ">
+                <h3 id="userTextReq"></h3>
+                <p id="toxicRes"></p>
+                <div id="popup-arrow"></div>
+            </span>
+            
+            <br>
+            <img id="guruImg" src="/img/guru.png" style="width: 100px; border-radius: 50% ">
         </div>
 
         {{>footer}}
     </body>
     <script src="/js/app.js"></script>
-    <script src="/js/popup.js"></script>
 
     
 </html>

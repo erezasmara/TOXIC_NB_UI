@@ -27,13 +27,35 @@ app.use(express.static(publicDirPath))
 
 
 //Routes
-app.get('/',(req,res) =>{
+app.get('',(req,res) =>{
     res.render('index',{
         title:"title",
         description:"description",
         name :'Erez Asmara'
     })
 })
+
+app.post('/toxic_predict',(req,res) =>{
+
+    if(!req.body || req.body.data.length <= 0){
+        return res.status(404).send({
+            error : "Please provide a text to begin the process."
+        })
+    }else if(req.body.data.length > 50){
+        return res.status(404).send({
+            error : "Maximum 50 characters is required."
+        })
+    }
+    // send the request to machine learning server
+    toxic.GetToxicPredict(req.body).then((resolve) =>{
+        console.log(resolve);
+        res.status(201).send(resolve)
+    }).catch((reject) =>{
+        res.status(404).send(reject)
+    })
+
+})
+
 
 app.get('/home',(req,res) =>{
     res.render('home',{
@@ -58,33 +80,12 @@ app.get('/about',(req,res) =>{
 app.get('/help',(req,res) =>{
     res.render('help',{
         title:"HELP",
-        message:"this is some helpful text.",
-        description:"description",
+        message:"Toxic comments naive base application",
+        description:"this application can detect if your comment is toxic, the process done by ML (written with python) , for more information visit github projects link.",
         name :'Erez Asmara'
     })
 })
 
-
-app.post('/toxic_predict',(req,res) =>{
-
-    if(!req.body || req.body.data.length <= 0){
-        return res.status(404).send({
-            error : "you must provide text."
-        })
-    }else if(req.body.data.length > 50){
-        return res.status(404).send({
-            error : "max 50 Characters"
-        })
-    }
-    // send the request to machine learning server
-    toxic.GetToxicPredict(req.body).then((resolve) =>{
-        console.log(resolve);
-        res.status(201).send(resolve)
-    }).catch((reject) =>{
-        res.status(404).send(reject)
-    })
-
-})
 
 
 app.get('/*',(req,res) =>{
