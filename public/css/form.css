@@ -4,7 +4,7 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    width: 700px;
+    width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: #00000080;
@@ -58,16 +58,12 @@
 
   #form_btm{
     position: relative;
-    display: inline-block;
     padding: 10px 20px;
     color: #00b8c2;
     font-size: 16px;
-    text-decoration: none;
     text-transform: uppercase;
-    overflow: hidden;
     margin-top: 40px;
     letter-spacing: 4px;
-    box-shadow: 5px 10px;
-    left: 35%;
+    left: 23%;
   }
 
