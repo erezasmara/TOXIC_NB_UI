@@ -58,16 +58,12 @@
 
   #form_btm{
     position: relative;
-    display: inline-block;
     padding: 10px 20px;
     color: #00b8c2;
     font-size: 16px;
-    text-decoration: none;
     text-transform: uppercase;
-    overflow: hidden;
     margin-top: 40px;
     letter-spacing: 4px;
-    box-shadow: 5px 10px;
     left: 23%;
   }
 
