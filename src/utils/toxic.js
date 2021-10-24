@@ -3,7 +3,7 @@ const request = require('request')
 
 //send request to python toxic_nb_apis server with promise mythologic
 // const GetToxicPredict = (commit = 'test',callback) =>{
-//     var url_ = 'https://toxic-nb-apis.herokuapp.com/'
+//     var url_ = 'url'
 
 //     const body = {data: commit}
 //     request({
@@ -28,7 +28,7 @@ const request = require('request')
 const GetToxicPredict = (commit) =>{
 
     return new Promise((resolve,reject) =>{
-        var url_ = 'https://toxic-nb-apis.herokuapp.com/'
+        var url_ = 'url'
        
         request({
             method : 'post',
