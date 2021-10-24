@@ -62,9 +62,17 @@ const GetToxicPredict = (commit) =>{
 
 //generate tip for user
 const GenerateResponseMessage = (typeMessage) =>{
-    var resForToxicMsg =['bad text','not ok text','fail','stop use this language']
-    var resForOkMsg = ['good','keep with this language','i love when you speak like that','your the best']
-    var random_number = Math.floor(Math.random() * 4);
+    var resForToxicMsg = ['"Positive anything is better than negative nothing."',
+                        '"One small positive thought can change your whole day."',
+                        '"Be positive. Be true. Be kind.','Accentuate the positive, Eliminate the Negative, latch onto the affirmative."',
+                        '"Positive thinking is more than just a tagline. It changes the way we behave."',
+                        '"The positive thinker sees the invisible, feels the intangible, and achieves the impossible."',
+                        '"It makes a big difference in your life when you stay positive."',
+                        '"Positive thinking will let you do everything better than negative thinking will."',
+                        '"Once you replace negative thoughts with positive ones, you’ll start having positive results."',
+                        '"An attitude of positive expectation is the mark of the superior personality."']
+    var resForOkMsg = resForToxicMsg
+    var random_number = Math.floor(Math.random() * 9);
 
     if(!typeMessage){
         return resForToxicMsg[random_number]
