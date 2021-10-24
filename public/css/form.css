@@ -4,7 +4,7 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    width: 700px;
+    width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: #00000080;
@@ -68,6 +68,6 @@
     margin-top: 40px;
     letter-spacing: 4px;
     box-shadow: 5px 10px;
-    left: 35%;
+    left: 23%;
   }
 
