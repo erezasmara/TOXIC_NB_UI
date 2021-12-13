@@ -39,7 +39,7 @@ Toxic_nb_UI
 ```
 Description:
 
-front end for toxic application , look or the api service TOXIC_NB_APIS repository
+front end for toxic application , look for the api service TOXIC_NB_APIS repository
 
 Requirement:
 - node.js 12 +
