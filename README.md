@@ -38,8 +38,8 @@ Toxic_nb_UI
 
 ```
 Description:
-TOXIC application can detect if your comment is toxic, the process done by ML (written with python) ,
-for more information visit github projects link.
+
+front end for toxic application , look or the api service TOXIC_NB_APIS repository
 
 Requirement:
 - node.js 12 +
